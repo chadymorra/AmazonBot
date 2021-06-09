@@ -16,21 +16,24 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 app.layout = html.Div(children=[
     html.H1(children='Amazon Bot'),
+    ##html.Img(src="/assets/amazon.jpg"),
 
     dcc.Input(
         id="my_product",
         type="search",
         value="",
-        placeholder="Please enter your product"),
+        className="header",
+        placeholder="Enter your product"),
 
     html.Button(
         "Submit",
         id="submit",
-        n_clicks=0),
+        n_clicks=0,
+        className="button"),
 
     html.Div(id="result")
 
-])
+], className="centered")
 alerts = html.Div(
     [
         dbc.Alert("This is an alert!", color="primary")
